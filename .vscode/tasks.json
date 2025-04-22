@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compile Kotlin",
+        "type": "shell",
+        "command": "kotlinc",
+        "args": [
+          "bubble-sort-dart.kt",
+          "-include-runtime",
+          "-d",
+          "bubble-sort-dart.jar"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run Kotlin JAR",
+        "type": "shell",
+        "command": "java",
+        "args": [
+          "-jar",
+          "bubble-sort-dart.jar"
+        ],
+        "dependsOn": ["Compile Kotlin"],
+        "group": "build",
+        "problemMatcher": []
+      }
+    ]
+  }
+  
